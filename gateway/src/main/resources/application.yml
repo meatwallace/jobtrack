@@ -1,10 +1,15 @@
 server:
-  port: 8080
-
-userService:
-  host: localhost
-  port: 8080
+  port: 8000
 
 jobService:
   host: localhost
-  port: 8080
+  port: 8001
+
+userService:
+  host: localhost
+  port: 8002
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true

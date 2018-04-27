@@ -5,7 +5,6 @@ import org.bencompany.jobtrack.gateway.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import static reactor.core.publisher.Mono.just;
 
@@ -19,6 +18,11 @@ public class GatewayController {
     public GatewayController(UserService userService, JobService jobService) {
         this.userService = userService;
         this.jobService = jobService;
+    }
+
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "Hello world!";
     }
 
     @GetMapping("/")

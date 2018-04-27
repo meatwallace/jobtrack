@@ -29,12 +29,3 @@ allprojects {
     }
 
 }
-
-subprojects {
-    task buildAndImage {
-        task ->
-            dependsOn 'build', 'docker'
-            println("Building and imaging ${task.project.name}")
-    }
-
-}
