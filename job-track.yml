@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: job-track-deployment
-  labels:
-    app: jobtrack-deploy
+  name: jt-deploy
 spec:
   replicas: 1
   selector:
@@ -33,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jobtrack-service
+  name: jt-service
 spec:
   selector:
     app: jobtrack

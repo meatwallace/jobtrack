@@ -3,5 +3,5 @@ include 'job'
 include 'gateway'
 
 
-rootProject.name = 'job-track'
+rootProject.name = 'jobtrack'
 
