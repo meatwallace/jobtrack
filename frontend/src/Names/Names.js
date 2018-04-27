@@ -5,17 +5,32 @@ import './Names.css';
 import ApiService from '../services/ApiService';
 
 class Names extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: 'SomeGuy'
+    };
+  }
+
+  componentDidMount() {
+    var apiService = new ApiService();
+    apiService
+      .getAnotherUser()
+      .then(response => {
+        this.setState({user:response});
+      });
+  }
+
   render() {
     var apiService = new ApiService();
 
     return (
-    <div className="Names Container">
-    <br />
-          <TextField defaultValue={ apiService.getUser() } />
-          <br />
-          <TextField defaultValue={ apiService.getJob() } />
+      <div className="Names Container">
+        <br/>
+        <TextField value={this.state.user}/>
       </div>
-  );
+    );
   }
 }
 
