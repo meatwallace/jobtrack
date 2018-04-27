@@ -21,6 +21,7 @@ kubernetes spring boot tomfoolery
 ##### ok, now what
 
 `minikube service jobtrack-service`
+it will always build on port 31000, but everyone gets a different minikube IP so just use that command^
 
 ## what about stopping
 
