@@ -1,11 +1,17 @@
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.palantir.docker'
 
 sourceCompatibility = 10
 targetCompatibility = 10
-group = 'com.bencompany'
 version = '1.0'
+
+docker {
+	dependsOn build
+	name = 'job-service:latest'
+	files(tasks.jar.outputs)
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
@@ -16,9 +22,5 @@ dependencies {
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
-
-	// TODO: add embedded mongo
-	//compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
-	//compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
 
 }
