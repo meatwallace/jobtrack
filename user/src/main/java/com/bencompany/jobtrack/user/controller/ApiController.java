@@ -1,4 +1,4 @@
-package com.bencompany.jobtrack.job.controller;
+package com.bencompany.jobtrack.user.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,11 +7,12 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api")
-public class IndexController {
+public class ApiController {
 
-    @GetMapping("/index")
-    Mono<String> test() {
-        return Mono.just("Hello world!");
+    @GetMapping("/user/random")
+    Mono<String> randomUser() {
+        return Mono.just("Barry White");
     }
+
 
 }

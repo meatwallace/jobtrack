@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.palantir.docker'
+
+sourceCompatibility = 10
+targetCompatibility = 10
+version = '1.0'
+
+docker {
+    dependsOn build
+    name = 'gateway:latest'
+    files(tasks.jar.outputs)
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-webflux')
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('io.projectreactor:reactor-test')
+
+}

@@ -1,0 +1,10 @@
+server:
+  port: 8010
+
+userService:
+  host: localhost
+  port: 8012
+
+jobService:
+  host: localhost
+  port: 8011

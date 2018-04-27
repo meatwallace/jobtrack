@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.bencompany.jobtrack")
-public class JobtrackApplication {
+@ComponentScan("com.bencompany.jobtrack.user")
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JobtrackApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 }
