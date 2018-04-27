@@ -1,11 +1,11 @@
 class ApiService {
 
-  getAnotherUser(responseCallback) {
+  getUserAndJob(responseCallback) {
     var url = 'http://192.168.99.100:31000/';
-    console.log("getAnotherUser");
+    console.log("getUserAndJob");
     return fetch(url)
-    .then(res => { 
-      console.log("Got response from getAnotherUser - " );
+    .then(res => {
+      console.log("Got response from getUserAndJob - " );
       return res.text()
     })
   }

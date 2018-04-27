@@ -1,34 +1,33 @@
 import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+
 import TextField from 'material-ui/TextField';
-import './Names.css';
 import ApiService from '../services/ApiService';
+
+import './Names.css';
 
 class Names extends Component {
 
   constructor(props) {
     super(props);
+    this.apiService = new ApiService();
     this.state = {
-      user: 'SomeGuy'
+      userAndJob: 'SomeGuyAndSomeJob'
     };
   }
 
   componentDidMount() {
-    var apiService = new ApiService();
-    apiService
-      .getAnotherUser()
+    this.apiService
+      .getUserAndJob()
       .then(response => {
-        this.setState({user:response});
+        this.setState({userAndJob:response});
       });
   }
 
   render() {
-    var apiService = new ApiService();
-
     return (
       <div className="Names Container">
         <br/>
-        <TextField value={this.state.user}/>
+        <TextField value={this.state.userAndJob}/>
       </div>
     );
   }
