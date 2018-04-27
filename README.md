@@ -13,7 +13,7 @@ kubernetes spring boot tomfoolery
 - java 10
 
 ## how to run
-
+`./gradlew build docker`
 `kubectl start -f job-track.yml`
 
 ##### ok, now what
